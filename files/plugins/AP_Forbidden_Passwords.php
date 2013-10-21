@@ -17,14 +17,20 @@ if ( !defined( 'PUN' ) )
   exit;
 }
 
-// Load the forbidden-passwords.php language file
-if ( file_exists( PUN_ROOT.'plugins/forbidden-passwords/lang/'.$pun_user['language'].'/forbidden-passwords.php' ) )
+// Plugin root
+if ( !defined( 'PLUGIN_ROOT' ) )
 {
-  require PUN_ROOT.'plugins/forbidden-passwords/lang/'.$pun_user['language'].'/forbidden-passwords.php';
+  define( 'PLUGIN_ROOT', PUN_ROOT.'/plugins/forbidden-passwords/');
+}
+
+// Load the forbidden-passwords.php language file
+if ( file_exists( PLUGIN_ROOT.'lang/'.$pun_user['language'].'/forbidden-passwords.php' ) )
+{
+  require PLUGIN_ROOT.'lang/'.$pun_user['language'].'/forbidden-passwords.php';
 }
 else
 {
-  require PUN_ROOT.'plugins/forbidden-passwords/lang/English/forbidden-passwords.php';
+  require PLUGIN_ROOT.'lang/English/forbidden-passwords.php';
 }
 
 // Load cached forbidden_passwords
@@ -36,7 +42,7 @@ if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED') )
   }
   else
   {
-    require_once PUN_ROOT.'plugins/forbidden-passwords/cache.php';
+    require_once PLUGIN_ROOT.'cache.php';
 
     generate_fp_cache();
     include FORUM_CACHE_DIR.'cache_forbidden_passwords.php';
