@@ -19,7 +19,7 @@ $author         = 'Daniel Rokven';
 $author_email   = 'rokven@gmail.com';
 
 // Versions of FluxBB this mod was created for. A warning will be displayed, if versions do not match
-$fluxbb_versions= array( '1.5.4', '1.5.3');
+$fluxbb_versions= array( '1.5.4', '1.5.3', '1.5.2', '1.5.1', '1.5.0', '1.4.11', '1.4.10', '1.4.9', '1.4.9', '1.4.8', '1.4.6', '1.4.5', '1.4.4', '1.4.3', '1.4.2', '1.4.1', '1.4.0' );
 
 // Set this to FALSE if you haven't implemented the restore function (see below)
 $mod_restore  = TRUE;
