@@ -56,6 +56,6 @@ if ( $fp_config['use_strtolower'] == '1' )
   $strtolower_new_password1 = strtolower( $new_password1 );
 }
 
-  $check = array_search( $strtolower_new_password1, $forbidden_passwords );
+  $check = in_array( $strtolower_new_password1, $forbidden_passwords );
 
 ?>

@@ -171,7 +171,7 @@ generate_admin_menu( $plugin );
     <form id="fp_options" method="post" action="<?php echo $_SERVER['REQUEST_URI'] ?>">
     <div class="inform">
       <fieldset>
-        <legend></legend>
+        <legend><span><?php echo $lang_fp['options'] ?></legend>
         <div class="infldset">
           <p>
             <?php $checked = ( $fp_config['use_strtolower'] == '1' ) ? ' checked="checked"' : ''; ?>
@@ -193,7 +193,7 @@ generate_admin_menu( $plugin );
     <form id="fp_new" method="post" action="<?php echo $_SERVER['REQUEST_URI'] ?>">
     <div class="inform">
       <fieldset>
-        <legend></legend>
+        <legend><?php echo $lang_fp['new password'] ?></legend>
         <div class="infldset">
           <p>
             <label for="new_password"><?php echo $lang_fp['new password'] ?> <input type="text" id="new_password" name="new_password" value="" /></label>
@@ -211,15 +211,15 @@ generate_admin_menu( $plugin );
   <h2 class="block2"><span><?php echo $lang_fp['forbidden passwords database'] ?></span> <small>( <?php echo $num_passwords ?> )</small></h2>
   <div class="box">
     <div class="inbox">
-      <p style="text-align: center">If you want to delete a password, just leave the input box empty and save.</p>
+      <p style="text-align: center"><?php echo $lang_fp['forbidden passwords database info'] ?></p>
     </div>
     <form id="fp_database" method="post" action="<?php echo $_SERVER['REQUEST_URI'] ?>">
     <div class="inform">
       <p class="submittop">
         <input type="submit" name="save_passwords" value="<?php echo $lang_fp['save passwords'] ?>"/>
       </p>
-      <fieldset>
-        <legend></legend>
+      <fieldset style="width: 95%;margin: auto;">
+        <legend><?php echo $lang_fp['forbidden passwords database'] ?></legend>
         <div class="infldset">
           <table class="aligntop" style="border-spacing:0;border-collapse:collapse;">
 
@@ -233,7 +233,7 @@ generate_admin_menu( $plugin );
                 if ( $i == 1 )
                   echo '<tr>';
 
-                echo '<td><input name="password['.intval( $key ).']" type="text" value="'.pun_htmlspecialchars( $value ).'" /></td>';
+                echo '<td style="text-align: center"><input name="password['.intval( $key ).']" type="text" value="'.pun_htmlspecialchars( $value ).'" /></td>';
 
                 echo ( $i % $input_in_a_row == 0 ) ? '</tr>' : '';
                 echo ( $i % ($input_in_a_row*10) == 0 ) ? '<tr><td colspan="'.$input_in_a_row.'" style="text-align: center"><input type="submit" name="save_passwords" value="'.$lang_fp['save passwords'].'"/></td></tr>' : '';
@@ -249,7 +249,7 @@ generate_admin_menu( $plugin );
         <input type="submit" name="save_passwords" value="<?php echo $lang_fp['save passwords'] ?>"/>
       </p>
       <p>
-        <a href="#punadmin" style="float: right;">Back to top</a>
+        <a href="#punadmin" style="float: right;"><?php echo $lang_fp['back to top'] ?></a>
       </p>
       <p style="clear:right"></p>
     </div>

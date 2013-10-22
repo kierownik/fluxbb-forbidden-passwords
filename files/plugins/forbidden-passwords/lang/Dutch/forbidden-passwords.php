@@ -13,21 +13,24 @@
 
 $lang_fp = array(
 
-'forbidden passwords'       =>  'Forbidden Passwords',
-'forbidden passwords info'  =>  'Maakt het mogelijk dat gebruikers bepaalde wachtwoorden niet kunnen gebruiken.',
+'forbidden passwords'               =>  'Forbidden Passwords',
+'forbidden passwords info'          =>  'Maakt het mogelijk dat gebruikers bepaalde wachtwoorden niet kunnen gebruiken.',
 
-'options'                   =>  'Opties',
-'use strtolower'            =>  'Maak gebruik van de functie strtolower?',
-'use strtolower info'       =>  'Als je hier gebruik van maakt dan worden het wachwoord van de gebruiker omgezet naar kleine letters en dan word er gekeken of hij in de array staat.',
+'options'                           =>  'Opties',
+'use strtolower'                    =>  'Maak gebruik van de functie strtolower?',
+'use strtolower info'               =>  'Voorbeeld: "WeLcOmE" word dan "welcome" en dan gechecked.',
 
-'new password'              =>  'Nieuwe wachtwoorden',
-'save new password'         =>  'Nieuwe wachtwoorden opslaan',
+'new password'                      =>  'Nieuw wachtwoord',
+'save new password'                 =>  'Nieuw wachtwoord opslaan',
 
-'password error'            =>  'Je wachtwoord kan niet "%s" zijn. Deze is te makkelijk...',
-'forbidden passwords database'  =>  'Verboden wachtwoorden in de database',
+'password error'                    =>  'Je wachtwoord kan niet "%s" zijn. Deze is te makkelijk...',
+'forbidden passwords database'      =>  'Verboden wachtwoorden in de database',
+'forbidden passwords database info' => 'Als je een wachtwoord wilt verwijderen, maak dan de input box leeg en sla op.',
 
-'save options'              =>  'Opties opslaan',
-'save passwords'            =>  'Wachtwoorden opslaan',
-'data saved'                =>  'Je opties zijn opgeslagen',
+'save options'                      =>  'Opties opslaan',
+'save passwords'                    =>  'Wachtwoorden opslaan',
+'data saved'                        =>  'Je opties zijn opgeslagen',
+
+'back to top'                       =>  'Terug naar boven',
 
 );
