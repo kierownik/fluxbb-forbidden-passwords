@@ -3,7 +3,7 @@
 /**
 ************************************************************************
 *  Author: kierownik
-*  Date: 2013-MM-DD
+*  Date: 2013-10-23
 *  Description: Makes it possible that users cannot use some kind passwords
 *  Copyright (C) Daniel Rokven ( rokven@gmail.com )
 *  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
@@ -13,7 +13,7 @@
 
 // Some info about your mod.
 $mod_title      = 'Forbidden Password';
-$mod_version    = '0.1';
+$mod_version    = '1.0';
 $release_date   = '2013-MM-DD';
 $author         = 'Daniel Rokven';
 $author_email   = 'rokven@gmail.com';
@@ -100,6 +100,9 @@ function install()
   // generate the forbidden_passwords cache and config cache
   require_once PUN_ROOT.'/plugins/forbidden-passwords/cache.php';
   generate_fp_cache();
+
+  require_once PUN_ROOT.'include/cache.php';
+  generate_config_cache();
 }
 
 // This following function will be called when the user presses the "Restore" button (only if $mod_restore is true (see above))
@@ -127,6 +130,9 @@ function restore()
   // Clear the forbidden_passwords cache and config cache
   require_once PUN_ROOT.'/plugins/forbidden-passwords/cache.php';
   clear_fp_cache();
+
+  require_once PUN_ROOT.'include/cache.php';
+  generate_config_cache();
 }
 
 /***********************************************************************/

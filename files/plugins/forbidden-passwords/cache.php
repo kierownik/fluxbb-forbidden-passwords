@@ -9,7 +9,7 @@
 /**
 ************************************************************************
 *  Author: kierownik
-*  Date: 2013-MM-DD
+*  Date: 2013-10-23
 *  Description: Makes it possible that users cannot use some kind passwords
 *  Copyright (C) Daniel Rokven ( rokven@gmail.com )
 *  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher

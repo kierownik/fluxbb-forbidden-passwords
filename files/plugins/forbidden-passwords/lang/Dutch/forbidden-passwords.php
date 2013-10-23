@@ -3,7 +3,7 @@
 /**
 ************************************************************************
 *  Author: kierownik
-*  Date: 2013-MM-DD
+*  Date: 2013-10-23
 *  Description: Makes it possible that users cannot use some kind passwords
 *  Copyright (C) Daniel Rokven ( rokven@gmail.com )
 *  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
@@ -17,7 +17,7 @@ $lang_fp = array(
 'forbidden passwords info'          =>  'Maakt het mogelijk dat gebruikers bepaalde wachtwoorden niet kunnen gebruiken.',
 
 'options'                           =>  'Opties',
-'use strtolower'                    =>  'Maak gebruik van de functie strtolower?',
+'use strtolower'                    =>  'Maak gebruik van de functie <a href="http://php.net/manual/en/function.strtolower.php" title="Functie uitleg op php.net" target="_blank">strtolower</a>?',
 'use strtolower info'               =>  'Voorbeeld: "WeLcOmE" word dan "welcome" en dan gechecked.',
 
 'new password'                      =>  'Nieuw wachtwoord',

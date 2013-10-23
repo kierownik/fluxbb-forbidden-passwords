@@ -3,7 +3,7 @@
 /**
 ************************************************************************
 *  Author: kierownik
-*  Date: 2013-MM-DD
+*  Date: 2013-10-23
 *  Description: Makes it possible that users cannot use some kind passwords
 *  Copyright (C) Daniel Rokven ( rokven@gmail.com )
 *  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
@@ -20,11 +20,11 @@ if ( !defined( 'PUN' ) )
 // Plugin root
 if ( !defined( 'PLUGIN_ROOT' ) )
 {
-  define( 'PLUGIN_ROOT', PUN_ROOT.'/plugins/forbidden-passwords/');
+  define( 'PLUGIN_ROOT', PUN_ROOT.'/plugins/forbidden-passwords/' );
 }
 
 // Load cached forbidden_passwords
-if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED') )
+if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED' ) )
 {
   if ( file_exists( FORUM_CACHE_DIR.'cache_forbidden_passwords.php' ) )
   {

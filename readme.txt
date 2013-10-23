@@ -1,10 +1,12 @@
 ##
-##
 ##        Mod title:  Forbidden Passwords
 ##
-##      Mod version:  0.1
-##  Works on FluxBB:  1.5.4, 1.5.3
-##     Release date:  2013-MM-DD
+##      Mod version:  1.0
+##  Works on FluxBB:  1.5.4  => 1.5.0
+##                    1.4.11 => 1.4.0
+##
+##     Release date:  2013-10-23
+##
 ##           Author:  Daniel Rokven (rokven@gmail.com)
 ##
 ##      Description:  Makes it possible that users cannot use some kind passwords
@@ -68,7 +70,7 @@ register.php
 		$errors[] = $lang_prof_reg['Pass not match'];
 
 #
-#---------[ 8. AFTER ADD ]---------------------------------------------------
+#---------[ 8. AFTER ADD ]----------------------------------------------------
 #
 
 	else if ( $check )
@@ -108,7 +110,7 @@ message($lang_prof_reg['Pass too short']);
 
 		else if ( $check )
 		{
-			message( sprintf( $lang_fp['password error'], $new_password1) );
+			message( sprintf( $lang_fp['password error'], $new_password1 ) );
 		}
 
 #

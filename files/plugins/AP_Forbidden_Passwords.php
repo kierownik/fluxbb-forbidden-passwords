@@ -3,7 +3,7 @@
 /**
 ************************************************************************
 *  Author: kierownik
-*  Date: 2013-MM-DD
+*  Date: 2013-10-23
 *  Description: Makes it possible that users cannot use some kind passwords
 *  Copyright (C) Daniel Rokven ( rokven@gmail.com )
 *  License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
@@ -20,7 +20,7 @@ if ( !defined( 'PUN' ) )
 // Plugin root
 if ( !defined( 'PLUGIN_ROOT' ) )
 {
-  define( 'PLUGIN_ROOT', PUN_ROOT.'/plugins/forbidden-passwords/');
+  define( 'PLUGIN_ROOT', PUN_ROOT.'/plugins/forbidden-passwords/' );
 }
 
 // Load the forbidden-passwords.php language file
@@ -34,7 +34,7 @@ else
 }
 
 // Load cached forbidden_passwords
-if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED') )
+if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED' ) )
 {
   if ( file_exists( FORUM_CACHE_DIR.'cache_forbidden_passwords.php' ) )
   {
@@ -53,7 +53,7 @@ if ( !defined( 'PUN_FORBIDDEN_PASSWORD_LOADED') )
 define( 'PUN_PLUGIN_LOADED', 1 );
 
 // Plugin version
-define( 'PLUGIN_VERSION', '0.1' );
+define( 'PLUGIN_VERSION', '1.0' );
 
 // We need all the config unserialized
 $fp_config = unserialize( $pun_config['o_forbidden_passwords'] );
@@ -122,7 +122,7 @@ if ( isset( $_POST['save_passwords'] ) )
   if ( $updated )
   {
     // Regenerate the forbidden passwords cache
-    require_once PUN_ROOT.'plugins/forbidden-passwords/cache.php';
+    require_once PLUGIN_ROOT.'cache.php';
     generate_fp_cache();
     redirect( $_SERVER['REQUEST_URI'], $lang_fp['data saved'] );
   }
@@ -147,7 +147,7 @@ if ( isset( $_POST['save_new_password'] ) )
   if ( $updated )
   {
     // Regenerate the forbidden passwords cache
-    require_once PUN_ROOT.'plugins/forbidden-passwords/cache.php';
+    require_once PLUGIN_ROOT.'cache.php';
     generate_fp_cache();
     redirect( $_SERVER['REQUEST_URI'], $lang_fp['data saved'] );
   }
@@ -227,7 +227,7 @@ generate_admin_menu( $plugin );
 
               asort( $forbidden_passwords );
               $i = 1;
-              $input_in_a_row = 5;
+              $submits_in_a_row = 5;
               foreach ( $forbidden_passwords as $key => $value )
               {
                 if ( $i == 1 )
@@ -235,8 +235,8 @@ generate_admin_menu( $plugin );
 
                 echo '<td style="text-align: center"><input name="password['.intval( $key ).']" type="text" value="'.pun_htmlspecialchars( $value ).'" /></td>';
 
-                echo ( $i % $input_in_a_row == 0 ) ? '</tr>' : '';
-                echo ( $i % ($input_in_a_row*10) == 0 ) ? '<tr><td colspan="'.$input_in_a_row.'" style="text-align: center"><input type="submit" name="save_passwords" value="'.$lang_fp['save passwords'].'"/></td></tr>' : '';
+                echo ( $i % $submits_in_a_row == 0 ) ? '</tr>' : '';
+                echo ( $i % ($submits_in_a_row*10) == 0 ) ? '<tr><td colspan="'.$submits_in_a_row.'" style="text-align: center"><input type="submit" name="save_passwords" value="'.$lang_fp['save passwords'].'"/></td></tr>' : '';
                 $i++;
               }
 
@@ -245,9 +245,6 @@ generate_admin_menu( $plugin );
           </table>
         </div>
       </fieldset>
-      <p class="submittop">
-        <input type="submit" name="save_passwords" value="<?php echo $lang_fp['save passwords'] ?>"/>
-      </p>
       <p>
         <a href="#punadmin" style="float: right;"><?php echo $lang_fp['back to top'] ?></a>
       </p>
