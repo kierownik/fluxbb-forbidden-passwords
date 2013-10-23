@@ -27,6 +27,9 @@ $lang_fp = array(
 'forbidden passwords database'      =>  'Forbidden passwords in the database',
 'forbidden passwords database info' => 'If you want to delete a password, just leave the input box empty and save.',
 
+'inputs in a row'                  =>  'How many input boxes do you want in a row?',
+'inputs in a row info'             =>  'These are the input boxes below',
+
 'save options'                      =>  'Save options',
 'save passwords'                    =>  'Save passwords',
 'data saved'                        =>  'Your data has been saved',

@@ -71,6 +71,7 @@ if ( isset( $_POST['set_options'] ) )
 
   $fp_options = array(
     'use_strtolower' => !empty( $_POST['use_strtolower'] ) ? intval( $_POST['use_strtolower'] ) : '0',
+    'inputs_in_a_row' => !empty( $_POST['inputs_in_a_row'] ) ? intval( $_POST['inputs_in_a_row'] ) : '5',
   );
 
   if ( serialize( $fp_options ) != $pun_config['o_forbidden_passwords'] )
@@ -177,6 +178,10 @@ generate_admin_menu( $plugin );
             <?php $checked = ( $fp_config['use_strtolower'] == '1' ) ? ' checked="checked"' : ''; ?>
             <label for="use_strtolower"><?php echo $lang_fp['use strtolower'] ?> <input type="checkbox" id="use_strtolower" name="use_strtolower" value="1" <?php echo $checked ?> /> <?php echo $lang_fp['use strtolower info'] ?></label>
           </p>
+          <p>
+            <?php $checked = ( $fp_config['inputs_in_a_row'] == '1' ) ? ' checked="checked"' : ''; ?>
+            <label for="inputs_in_a_row"><?php echo $lang_fp['inputs in a row'] ?> <input type="text" id="inputs_in_a_row" name="inputs_in_a_row" value="<?php echo $fp_config['inputs_in_a_row'] ?>" <?php echo $checked ?> /> <?php echo $lang_fp['inputs in a row info'] ?></label>
+          </p>
         </div>	<!-- end class="infldset" -->
       </fieldset>
       <p class="submittop">
@@ -227,7 +232,7 @@ generate_admin_menu( $plugin );
 
               asort( $forbidden_passwords );
               $i = 1;
-              $submits_in_a_row = 5;
+              $inputs_in_a_row = $fp_config['inputs_in_a_row'];
               foreach ( $forbidden_passwords as $key => $value )
               {
                 if ( $i == 1 )
@@ -235,8 +240,8 @@ generate_admin_menu( $plugin );
 
                 echo '<td style="text-align: center"><input name="password['.intval( $key ).']" type="text" value="'.pun_htmlspecialchars( $value ).'" /></td>';
 
-                echo ( $i % $submits_in_a_row == 0 ) ? '</tr>' : '';
-                echo ( $i % ($submits_in_a_row*10) == 0 ) ? '<tr><td colspan="'.$submits_in_a_row.'" style="text-align: center"><input type="submit" name="save_passwords" value="'.$lang_fp['save passwords'].'"/></td></tr>' : '';
+                echo ( $i % $inputs_in_a_row == 0 ) ? '</tr>' : '';
+                echo ( $i % ($inputs_in_a_row*10) == 0 ) ? '<tr><td colspan="'.$inputs_in_a_row.'" style="text-align: center"><input type="submit" name="save_passwords" value="'.$lang_fp['save passwords'].'"/></td></tr>' : '';
                 $i++;
               }
 

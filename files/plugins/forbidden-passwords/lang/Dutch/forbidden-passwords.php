@@ -27,6 +27,9 @@ $lang_fp = array(
 'forbidden passwords database'      =>  'Verboden wachtwoorden in de database',
 'forbidden passwords database info' => 'Als je een wachtwoord wilt verwijderen, maak dan de input box leeg en sla op.',
 
+'inputs in a row'                  =>  'Hoeveel input boxes wil je in één rij?',
+'inputs in a row info'             =>  'Dit zijn de input boxes hieronder',
+
 'save options'                      =>  'Opties opslaan',
 'save passwords'                    =>  'Wachtwoorden opslaan',
 'data saved'                        =>  'Je opties zijn opgeslagen',

@@ -85,7 +85,8 @@ function install()
   {
     // Begin add options to the config table
     $fp_options = array(
-      'use_strtolower'        => 1,
+      'use_strtolower'    => 1,
+      'inputs_in_a_row'   => 5,
     );
 
     // Serialize the new config
