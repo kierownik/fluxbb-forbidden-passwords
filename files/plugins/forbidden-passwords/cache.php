@@ -41,7 +41,7 @@ function generate_fp_cache()
 
 	// Output fp as PHP code
 	$content = '<?php'."\n\n".'define( \'PUN_FORBIDDEN_PASSWORD_LOADED\', 1 );'."\n\n".'$forbidden_passwords = '.var_export($output, true).';'."\n\n".'?>';
-	fluxbb_write_cache_file( 'cache_forbidden_passwords.php', $content );
+	fp_write_cache_file( 'cache_forbidden_passwords.php', $content );
 }
 
 //
@@ -58,9 +58,9 @@ function clear_fp_cache()
 //
 // Safely write out a cache file.
 //
-if ( !function_exists( 'fluxbb_write_cache_file' ) )
+if ( !function_exists( 'fp_write_cache_file' ) )
 {
-	function fluxbb_write_cache_file($file, $content)
+	function fp_write_cache_file($file, $content)
 	{
 		$fh = @fopen(FORUM_CACHE_DIR.$file, 'wb');
 		if (!$fh)
